@@ -1,0 +1,237 @@
+/* CSS HEX
+--carrot-orange: #e89005ff;
+--safety-orange: #ec7505ff;
+--scarlet: #f42b03ff;
+--chili-red: #e70e02ff; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .navbar .container-fluid {
+    background-color: #e70e02ff;
+  }
+  .navbar .container-fluid .navbar .container {
+    padding-right: 0px;
+    padding-left: 15px;
+  }
+  .navbar .container-fluid .navbar-brand {
+    color: #e70e02ff;
+  }
+
+  .footer {
+  background-color: #e70e02ff;
+  padding: 10px;
+  margin-top: 40px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  gap: 10px;
+  animation: swing-in-top-bck 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation-delay: 0.7s;
+}
+.footer .titulofooter {
+  color: #e7ecef;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+.footer .redes {
+  padding-left: 0;
+}
+.footer .redes .redesimg {
+  display: inline-block;
+  margin-inline: 10px;
+  justify-content: center;
+}
+.footer .redes .redesimg .imgRedes {
+  width: 30px;
+  cursor: pointer;
+}
+.footer .redes .redesimg .imgRedes:hover {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 22px 70px 4px;
+}
+.footer .domicilio {
+  color: #e7ecef;
+  font-size: 16px;
+  font-weight: bold;
+}
+.footer .derechos {
+  color: #e7ecef;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.contenedorProductos {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.productoImagen {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.productoDetalles {
+  background-color: #ec7505ff;
+  border-radius: 10px;
+  margin-top: -1rem;
+  padding: .5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.productoTitulo {
+  font-size: 1.5rem;
+}
+
+.productoPrecio {
+  font-size: 1rem;
+}
+
+.productoAgregar {
+  border: 0;
+  border-radius: 10px;
+  background-color: #f42b03ff;
+  font-size: 1.2rem;
+  padding: .25rem;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  transition: border 1s;
+}
+
+.productoAgregar:hover {
+  border: 1px solid;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 0.25fr 1fr 1fr 0.25fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "... formulario medios ..." "... formulario mapa ...";
+  place-items: center;
+}
+.contact .formulario {
+  grid-area: formulario;
+  animation: swing-in-top-bck 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation-delay: 0.3s;
+  max-width: 100%;
+}
+.contact .formulario:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 22px 70px 4px;
+}
+.contact .formulario .form {
+  background-color: #f42b03ff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  gap: 5px;
+  border-radius: 8px;
+  border: groove;
+  border-color: #1f1f1f;
+  max-width: 100%;
+}
+.contact .formulario .form .labels {
+  display: flex;
+  flex-direction: column;
+}
+.contact .formulario .form .siono {
+  display: flex;
+  flex-direction: row;
+}
+.contact .mapa {
+  grid-area: mapa;
+  border: groove;
+  border-color: #1f1f1f;
+  border-radius: 8px;
+  animation: swing-in-top-bck 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation-delay: 0.5s;
+}
+.contact .mapa:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 22px 70px 4px;
+}
+.contact .medios {
+  background-color: #f42b03ff;
+  margin-top: 40px;
+  padding: 10px;
+  grid-area: medios;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  gap: 5px;
+  border-radius: 8px;
+  animation: swing-in-top-bck 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation-delay: 0.4s;
+  border: groove;
+  border-color: #1f1f1f;
+  max-width: 100%;
+}
+.contact .medios:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 22px 70px 4px;
+}
+
+.productosContainer {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  gap: 1.5rem;
+}
+
+.tituloOferta {
+  font-size: 2rem;
+  font-size: 2rem;
+  margin-left: 4rem;
+  margin-top: 1rem;
+  color: #f42b03ff;
+}
+
+.carousel {
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+  width: 560px;
+  border: 3px solid #f42b03ff;
+  border-radius: 10px;
+}
+
+.tituloCarrusel {
+  font-size: 2rem;
+  margin-left: 4rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  color: #f42b03ff;
+}
+
+.colormode {
+  font-size: 20px;
+  color: #f42b03ff;
+  background-color: #1f1f1f;
+  border: 1px solid #ec7505ff;
+  border-radius: 10px;
+  margin: 1px;
+  margin-left: 600px;
+}
+
+.colormode:hover {
+  color: #ec0000b9;
+  background-color: #1f1f1f;
+  cursor: pointer;
+  border: 1px solid #1f1f1f;
+}
+
+.dark-mode {
+  background-color: #1f1f1f;
+}
