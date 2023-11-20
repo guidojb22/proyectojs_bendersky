@@ -74,6 +74,7 @@ const llamadoArray = (direccion, generarNodos, container) => {
     fetch(direccion)
     .then(res => res.json())
     .then(data => {
+        productos = data;
         generarNodos(data, container)  
     })
 }
@@ -85,6 +86,18 @@ llamadoArray("../js/productos.json", nodosProductos, containerTarjetas)
 //         console.log(products)
 //     }
 // }
+
+// FILTRO BUSQUEDA
+
+const inputBusqueda = document.querySelector("#input-busqueda");
+
+document.querySelector("#form-busqueda").onsubmit = event => {
+    event.preventDefault();
+    const productosBusqueda = productos.filter(producto =>
+        producto.categoria.toLowerCase().includes(inputBusqueda.value.toLowerCase())
+    );
+    nodosProductos(productosBusqueda, containerTarjetas);
+};
 
 // TARJETAS PRODUCTOS OFERTA CON FETCH: JSON
 
