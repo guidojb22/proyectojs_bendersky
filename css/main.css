@@ -215,6 +215,11 @@
   color: #f42b03ff;
 }
 
+.swiper {
+  width: 580px;
+  height: 560px;
+}
+
 .colormode {
   font-size: 20px;
   color: #f42b03ff;
