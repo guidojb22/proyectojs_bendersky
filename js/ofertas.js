@@ -11,7 +11,7 @@ const nodosProductosOferta = (data, container) => {
             <div class="productoDetalles">
                 <h3 class="productoTitulo">${productos.titulo}</h3>
                 <p class="productoPrecio">Precio: $${productos.precio}</p>
-                <button class="productoAgregar" id="${productos.id}">Agregar al carrito</button>
+                <button class="productoAgregar" id="${productos.id}"><i class="bi bi-cart-fill"></i> Agregar al carrito</button>
             </div>
         </article>
         `;

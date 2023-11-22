@@ -40,8 +40,16 @@ botonColorMode.addEventListener("click", () => {
 // TARJETAS PRODUCTOS CON FETCH: JSON Y ORDEN ALFABEETICO CRECIENTE Y DECRECIENTE
 
 const containerTarjetas = document.querySelector("#productosDOM");
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []
+let productos;
 
-let productos = [];
+const subirAlLS =(clave, data) => localStorage.setItem(clave, JSON.stringify(data))
+const obtenerDelLS = clave => JSON.parse(localStorage.getItem(clave))
+const aniadirAlCarrito = (data) => carrito.push(data)
+const obtenerProducto = (clase, data) => {
+    const obtenerId = clase.slice(4)
+    return data.find( element => element.id === obtenerId)
+}
 
 const nodosProductos = (data, container) => {
     const nodos = data.reduce((acc, producto) => {
@@ -51,7 +59,7 @@ const nodosProductos = (data, container) => {
             <div class="productoDetalles">
                 <h3 class="productoTitulo">${producto.titulo}</h3>
                 <p class="productoPrecio">Precio: $${producto.precio}</p>
-                <button class="productoAgregar" id="${producto.id}">Agregar al carrito</button>
+                <button class="productoAgregar" id="add-${producto.id}"><i class="productoAgregar bi bi-cart-fill" id="add-${producto.id}"></i> Agregar al carrito</button>
             </div>
         </article>
         `;
@@ -64,13 +72,34 @@ const llamadoArray = (direccion, generarNodos, container) => {
     fetch(direccion)
     .then(res => res.json())
     .then(data => {
-        productos = data;
         generarNodos(data, container);
+        productos = data;
     })
     .catch(error => {
         console.error("Error al obtener los datos:", error);
     });
 };
+
+document.body.onclick = (event) => {
+    if (event.target.classList.contains("productoAgregar")) {
+        aniadirAlCarrito((obtenerProducto(event.target.id, productos)))
+        subirAlLS("carrito", carrito)
+        Toastify({
+            text: `${obtenerProducto(event.target.id, productos).titulo} ha sido añadido al carrito de compras`,
+            duration: 2200,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "bottom",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "linear-gradient(to right, #f42b03ff, #ec7505ff)",
+            },
+            onClick: function(){}
+          }).showToast();       
+    }
+}
 
 llamadoArray("../js/productos.json", nodosProductos, containerTarjetas);
 
@@ -83,12 +112,6 @@ document.querySelector("#za").addEventListener("click", function () {
     const productosOrdenados = productos.sort((a, b) => b.titulo.localeCompare(a.titulo));
     nodosProductos(productosOrdenados, containerTarjetas);
 });
-
-// document.body.onclick = ( event ) => {   
-//     if (event.target.classList.contains("productoAgregar")) {    
-//         console.log(products)
-//     }
-// }
 
 // FILTRO BUSQUEDA
 
