@@ -4,14 +4,14 @@
 const containerTarjetasOferta = document.querySelector(".oferta");
 
 const nodosProductosOferta = (data, container) => {
-    const nodos = data.reduce((acc, productos) => {
+    const nodos = data.reduce((acc, producto) => {
         return acc + `
         <article class="producto">
-            <img class="productoImagen" src=${productos.imagen} alt="${productos.titulo}">
+            <img class="productoImagen" src=${producto.imagen} alt="${producto.titulo}">
             <div class="productoDetalles">
-                <h3 class="productoTitulo">${productos.titulo}</h3>
-                <p class="productoPrecio">Precio: $${productos.precio}</p>
-                <button class="productoAgregar" id="${productos.id}"><i class="bi bi-cart-fill"></i> Agregar al carrito</button>
+                <h3 class="productoTitulo">${producto.titulo}</h3>
+                <p class="productoPrecio">Precio: $${producto.precio}</p>
+                <button class="productoAgregar" id="add-${producto.id}"><i class="productoAgregar bi bi-cart-fill" id="add-${producto.id}"></i> Agregar al carrito</button>
             </div>
         </article>
         `;

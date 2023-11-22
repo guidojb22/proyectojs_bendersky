@@ -37,7 +37,7 @@ botonColorMode.addEventListener("click", () => {
     }
 })
 
-// TARJETAS PRODUCTOS CON FETCH: JSON Y ORDEN ALFABEETICO CRECIENTE Y DECRECIENTE
+// TARJETAS PRODUCTOS CON FETCH: JSON
 
 const containerTarjetas = document.querySelector("#productosDOM");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || []
@@ -97,11 +97,13 @@ document.body.onclick = (event) => {
               background: "linear-gradient(to right, #f42b03ff, #ec7505ff)",
             },
             onClick: function(){}
-          }).showToast();       
+          }).showToast();  
     }
 }
 
 llamadoArray("../js/productos.json", nodosProductos, containerTarjetas);
+
+// ORDEN ALFABEETICO CRECIENTE, DECRECIENTE Y FILTRO OFERTA
 
 document.querySelector("#az").addEventListener("click", function () {
     const productosOrdenados = productos.sort((a, b) => a.titulo.localeCompare(b.titulo));
@@ -111,6 +113,11 @@ document.querySelector("#az").addEventListener("click", function () {
 document.querySelector("#za").addEventListener("click", function () {
     const productosOrdenados = productos.sort((a, b) => b.titulo.localeCompare(a.titulo));
     nodosProductos(productosOrdenados, containerTarjetas);
+});
+
+document.querySelector("#filtroOferta").addEventListener("click", function () {
+    const productosDeOferta = productos.filter((objeto) => objeto.oferta === String("si"));
+    nodosProductos(productosDeOferta, containerTarjetas);
 });
 
 // FILTRO BUSQUEDA
