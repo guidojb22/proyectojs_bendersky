@@ -47,8 +47,5 @@ const llamadoArrayOferta = (direccion, generarNodos, container) => {
                 }
             }
         })
-        .catch((error) => {
-            console.error("Error al obtener los datos:", error);
-        });
 };
 llamadoArrayOferta("../js/productos.json", nodosProductosOferta, containerTarjetasOferta);

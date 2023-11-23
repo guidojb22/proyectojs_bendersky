@@ -251,3 +251,18 @@
 .dark-mode {
   background-color: #1f1f1f;
 }
+
+.productoBorrar {
+  border: 0;
+  border-radius: 10px;
+  background-color: #f42b03ff;
+  font-size: 1.2rem;
+  padding: .25rem;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  transition: border 1s;
+}
+
+.vaciarCarrito {
+  padding-left: 30px;
+}
