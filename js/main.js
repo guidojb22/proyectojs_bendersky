@@ -11,6 +11,8 @@ const obtenerProducto = (clase, data) => {
     const obtenerId = clase.slice(4)
     return data.find( element => element.id === obtenerId)
 }
+const vaciarElCarrito = (data) => carrito.splice(0,data)
+const borrarDelCarrito = (data) => carrito.splice(data,1)
 
 const nodosProductos = (data, container) => {
     const nodos = data.reduce((acc, producto) => {

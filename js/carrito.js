@@ -17,8 +17,6 @@ function cargarProductos() {
     });
 }
 
-const vaciarElCarrito = (data) => carrito.splice(0,data)
-
 document.body.onclick = (event) => {
     if (event.target.classList.contains("vaciarCarritoBoton")) {
         vaciarElCarrito(carrito.length)
@@ -38,29 +36,41 @@ document.body.onclick = (event) => {
             onClick: function(){}
           }).showToast();  
     }
+    if (event.target.classList.contains("completarCompraBoton")) {
+        vaciarElCarrito(carrito.length)
+        subirAlLS("carrito", carrito)
+        Toastify({
+            text: `Ha comprado los productos seleccionados`,
+            duration: 2200,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "bottom",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "linear-gradient(to right, #f42b03ff, #ec7505ff)",
+            },
+            onClick: function(){}
+          }).showToast();  
+    }
+        if (event.target.classList.contains("productoBorrar")) {
+        borrarDelCarrito(0)
+        subirAlLS("carrito", carrito)
+        Toastify({
+            text: `${obtenerProducto(event.target.id, productos).titulo} ha sido eliminado del carrito`,
+            duration: 2200,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "bottom",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+              background: "linear-gradient(to right, #f42b03ff, #ec7505ff)",
+            },
+            onClick: function(){}
+          }).showToast();  
+    }
 }
-
-// const borrarDelCarrito = (data) => carrito.splice(data,1)
-
-// document.body.onclick = (event) => {
-//     if (event.target.classList.contains("productoBorrar")) {
-//         borrarDelCarrito(0)
-//         subirAlLS("carrito", carrito)
-//         Toastify({
-//             text: `${obtenerProducto(event.target.id, productos).titulo} ha sido eliminado del carrito`,
-//             duration: 2200,
-//             destination: "https://github.com/apvarun/toastify-js",
-//             newWindow: true,
-//             close: true,
-//             gravity: "bottom",
-//             position: "right",
-//             stopOnFocus: true,
-//             style: {
-//               background: "linear-gradient(to right, #f42b03ff, #ec7505ff)",
-//             },
-//             onClick: function(){}
-//           }).showToast();  
-//     }
-// }
-
 cargarProductos();
