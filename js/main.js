@@ -36,30 +36,29 @@ const llamadoArray = (direccion, generarNodos, container) => {
     .then(res => res.json())
     .then(data => {
         generarNodos(data, container);
+        document.body.onclick = (event) => {
+            if (event.target.classList.contains("productoAgregar")) {
+                aniadirAlCarrito((obtenerProducto(event.target.id, productos)))
+                subirAlLS("carrito", carrito)
+                Toastify({
+                    text: `${obtenerProducto(event.target.id, productos).titulo} ha sido añadido al carrito de compras`,
+                    duration: 2200,
+                    destination: "https://github.com/apvarun/toastify-js",
+                    newWindow: true,
+                    close: true,
+                    gravity: "bottom",
+                    position: "right",
+                    stopOnFocus: true,
+                    style: {
+                      background: "linear-gradient(to right, #f42b03ff, #ec7505ff)",
+                    },
+                    onClick: function(){}
+                  }).showToast();  
+            }
+        }
         productos = data;
     })
 };
-
-document.body.onclick = (event) => {
-    if (event.target.classList.contains("productoAgregar")) {
-        aniadirAlCarrito((obtenerProducto(event.target.id, productos)))
-        subirAlLS("carrito", carrito)
-        Toastify({
-            text: `${obtenerProducto(event.target.id, productos).titulo} ha sido añadido al carrito de compras`,
-            duration: 2200,
-            destination: "https://github.com/apvarun/toastify-js",
-            newWindow: true,
-            close: true,
-            gravity: "bottom",
-            position: "right",
-            stopOnFocus: true,
-            style: {
-              background: "linear-gradient(to right, #f42b03ff, #ec7505ff)",
-            },
-            onClick: function(){}
-          }).showToast();  
-    }
-}
 
 llamadoArray("../js/productos.json", nodosProductos, containerTarjetas);
 
