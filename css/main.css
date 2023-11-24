@@ -118,7 +118,10 @@
 }
 
 .busqueda {
-  padding-left: 30px;
+  margin-left: 30px;
+  border: 0;
+  border-radius: 10px;
+  font-size: 1.2rem;
 }
 
 .ordenar {
@@ -227,7 +230,7 @@
 }
 
 .swiper {
-  width: 580px;
+  width: 560px;
   height: 560px;
 }
 
@@ -265,4 +268,92 @@
 
 .vaciarCarrito {
   padding-left: 30px;
+}
+
+.ordenar-az {
+  border: 0;
+  border-radius: 10px;
+  background-color: #f42b03ff;
+  font-size: 1.2rem;
+  padding: .25rem;
+  cursor: pointer;
+  border-bottom: 2px solid;
+}
+
+.ordenar-az:hover {
+  background-color: #ec7505ff;
+}
+
+.ordenar-za {
+  border: 0;
+  border-radius: 10px;
+  background-color: #f42b03ff;
+  font-size: 1.2rem;
+  padding: .25rem;
+  cursor: pointer;
+  border-bottom: 2px solid;
+}
+
+.ordenar-za:hover {
+  background-color: #ec7505ff;
+}
+
+.verOferta {
+  border: 0;
+  border-radius: 10px;
+  background-color: #f42b03ff;
+  font-size: 1.2rem;
+  padding: .25rem;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  transition: border 1s;
+}
+
+.verOferta:hover {
+  background-color: #ec7505ff;
+}
+
+.busquedaSubmit {
+  border: 0;
+  border-radius: 10px;
+  background-color: #f42b03ff;
+  font-size: 1.2rem;
+  padding: .25rem;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  transition: border 1s;
+}
+
+.busquedaSubmit:hover {
+  background-color: #ec7505ff;
+}
+
+.vaciarCarritoBoton {
+  border: 0;
+  border-radius: 10px;
+  background-color: #f42b03ff;
+  font-size: 1.2rem;
+  padding: .25rem;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  transition: border 1s;
+}
+
+.vaciarCarritoBoton:hover {
+  background-color: #ec7505ff;
+}
+
+.completarCompraBoton {
+  border: 0;
+  border-radius: 10px;
+  background-color: #f42b03ff;
+  font-size: 1.2rem;
+  padding: .25rem;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  transition: border 1s;
+}
+
+.completarCompraBoton:hover {
+  background-color: #ec7505ff;
 }
