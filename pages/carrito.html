@@ -46,16 +46,23 @@
     </header>
 
     <main>
-        <h3 class="tituloOferta"><i class="bi bi-arrow-down"></i><i class="bi bi-arrow-down"></i><i class="bi bi-arrow-down"></i>Carrito MeluTienda<i class="bi bi-arrow-down"></i><i class="bi bi-arrow-down"></i><i class="bi bi-arrow-down"></i></h3>
-        <div class="vaciarCarrito">
-            <label>
-                <input type="button" value="Vaciar carrito" class="vaciarCarritoBoton" id="vaciarCarrito">
-            </label>
-            <label>
-                <input type="button" value="Completar compra" class="completarCompraBoton" id="completarCompra">
-            </label>
-        </div>
-        <div class="productosContainer" id="productosCarrito"></div>
+        <section class="seccionCarrito">
+            <h3 class="tituloOferta"><i class="bi bi-arrow-down"></i><i class="bi bi-arrow-down"></i><i class="bi bi-arrow-down"></i>Carrito MeluTienda<i class="bi bi-arrow-down"></i><i class="bi bi-arrow-down"></i><i class="bi bi-arrow-down"></i></h3>
+            <div class="vaciarCarrito">
+                <label>
+                    <input type="button" value="Vaciar carrito" class="vaciarCarritoBoton" id="vaciarCarrito">
+                </label>
+            </div>
+            <article class="productosContainerCarrito">
+                <div class="containerCarrito" id="productosCarrito"></div>
+            </article>
+            <p class="totalCarrito" id="totalCompra"></p>
+            <div class="comprarCarrito">
+                <label>
+                    <input type="button" value="Completar compra" class="completarCompraBoton" id="completarCompra">
+                </label>
+            </div>
+        </section>
     </main>
 
 

@@ -1,18 +1,26 @@
 let productosCarrito = document.querySelector("#productosCarrito");
 
+let total = document.querySelector("#totalCompra");
+
 function cargarProductos() {
+    productosCarrito.innerHTML = ""; 
+
     carrito.forEach(producto => {
         const div = document.createElement("div");
         div.innerHTML = `<article class="producto">
-            <img class="productoImagen" src=${producto.imagen} alt="${producto.titulo}">
-            <div class="productoDetalles">
-                <h3 class="productoTitulo">${producto.titulo}</h3>
-                <p class="productoPrecio">Precio: $${producto.precio}</p>
-                <button class="productoBorrar" id="del-${producto.id}"><i class="bi bi-trash3-fill productoBorrar" id="del-${producto.id}"></i> Eliminar del carrito</button>
+            <img class="productoCarritoImagen" src=${producto.imagen} alt="${producto.titulo}">
+            <div class="productoCarritoDetalles">
+                <h3 class="productoCarritoTitulo">${producto.titulo}</h3>
+                <p class="productoCarritoPrecio">Precio: $${producto.precio}</p>
+                <button class="productoBorrar" id="del-${producto.id}"><i class="bi bi-trash3-fill productoBorrar" id="del-${producto.id}"></i> Eliminar</button>
             </div>
         </article>`
 
         productosCarrito.append(div);
+
+        const sumaPrecios = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+        total.innerHTML = `Total de la compra: $${sumaPrecios}`
+        
     });
 }
 
@@ -26,9 +34,10 @@ document.body.onclick = async (event) => {
     if (event.target.classList.contains("vaciarCarritoBoton")) {
         vaciarElCarrito(carrito.length);
         subirAlLS("carrito", carrito);
-
+        
         actualizarInterfaz();
-
+        const sumaPrecios = carrito.reduce((acc, producto) => acc + producto.precio, 0);
+        total.innerHTML = `Tu carrito está vacío`;
         Toastify({
             text: `Ha vaciado el carrito`,
             duration: 2200,
@@ -46,11 +55,13 @@ document.body.onclick = async (event) => {
         vaciarElCarrito(carrito.length);
         subirAlLS("carrito", carrito);
 
+        total.innerHTML = `Muchas gracias por su compra`
+
         actualizarInterfaz();
 
         Toastify({
             text: `COMPRA EXITOSA. MUCHAS GRACIAS`,
-            duration: 2200,
+            duration: 4000,
             newWindow: true,
             close: false,
             stopOnFocus: true,
@@ -59,6 +70,7 @@ document.body.onclick = async (event) => {
             },
             onClick: function(){}
         }).showToast();
+
     }
 
     if (event.target.classList.contains("productoBorrar")) {
@@ -72,7 +84,7 @@ document.body.onclick = async (event) => {
             subirAlLS("carrito", carrito);
 
             actualizarInterfaz();
-
+            
             Toastify({
                 text: `El producto ha sido eliminado del carrito`,
                 duration: 2200,
@@ -87,4 +99,4 @@ document.body.onclick = async (event) => {
     }
 };}
 
-cargarProductos();
+cargarProductos(); 

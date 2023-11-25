@@ -14,18 +14,21 @@
     padding-top: 0px;
     padding-bottom: 0px;
   }
-  .navbar .container-fluid {
+
+.container-fluid {
     background-color: #e70e02ff;
   }
-  .navbar .container-fluid .navbar .container {
+
+ .container {
     padding-right: 0px;
     padding-left: 15px;
   }
-  .navbar .container-fluid .navbar-brand {
+
+.navbar-brand {
     color: #e70e02ff;
   }
 
-  .footer {
+.footer {
   background-color: #e70e02ff;
   padding: 10px;
   margin-top: 40px;
@@ -36,7 +39,8 @@
   animation: swing-in-top-bck 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation-delay: 0.7s;
 }
-.footer .titulofooter {
+
+.titulofooter {
   color: #e7ecef;
   font-size: 30px;
   display: flex;
@@ -44,27 +48,33 @@
   text-align: center;
   font-weight: bold;
 }
-.footer .redes {
+
+.redes {
   padding-left: 0;
 }
-.footer .redes .redesimg {
+
+.redesimg {
   display: inline-block;
   margin-inline: 10px;
   justify-content: center;
 }
-.footer .redes .redesimg .imgRedes {
+
+.imgRedes {
   width: 30px;
   cursor: pointer;
 }
-.footer .redes .redesimg .imgRedes:hover {
+
+.imgRedes:hover {
   box-shadow: rgba(0, 0, 0, 0.4) 0px 22px 70px 4px;
 }
-.footer .domicilio {
+
+.domicilio {
   color: #e7ecef;
   font-size: 16px;
   font-weight: bold;
 }
-.footer .derechos {
+
+.derechos {
   color: #e7ecef;
   font-size: 10px;
   font-weight: bold;
@@ -118,7 +128,7 @@
 }
 
 .busqueda {
-  margin-left: 30px;
+  margin-left: 3.45rem;
   border: 0;
   border-radius: 10px;
   font-size: 1.2rem;
@@ -136,16 +146,19 @@
   grid-template-areas: "... formulario medios ..." "... formulario mapa ...";
   place-items: center;
 }
-.contact .formulario {
+
+.formulario {
   grid-area: formulario;
   animation: swing-in-top-bck 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation-delay: 0.3s;
   max-width: 100%;
 }
-.contact .formulario:hover {
+
+.formulario:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 22px 70px 4px;
 }
-.contact .formulario .form {
+
+.form {
   background-color: #f42b03ff;
   padding: 10px;
   display: flex;
@@ -157,15 +170,18 @@
   border-color: #1f1f1f;
   max-width: 100%;
 }
-.contact .formulario .form .labels {
+
+.labels {
   display: flex;
   flex-direction: column;
 }
-.contact .formulario .form .siono {
+
+.siono {
   display: flex;
   flex-direction: row;
 }
-.contact .mapa {
+
+.mapa {
   grid-area: mapa;
   border: groove;
   border-color: #1f1f1f;
@@ -173,10 +189,12 @@
   animation: swing-in-top-bck 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation-delay: 0.5s;
 }
-.contact .mapa:hover {
+
+.mapa:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 22px 70px 4px;
 }
-.contact .medios {
+
+.medios {
   background-color: #f42b03ff;
   margin-top: 40px;
   padding: 10px;
@@ -192,7 +210,8 @@
   border-color: #1f1f1f;
   max-width: 100%;
 }
-.contact .medios:hover {
+
+.medios:hover {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 22px 70px 4px;
 }
 
@@ -255,23 +274,13 @@
   background-color: #1f1f1f;
 }
 
-.productoBorrar {
-  border: 0;
-  border-radius: 10px;
-  background-color: #f42b03ff;
-  font-size: 1.2rem;
-  padding: .25rem;
-  cursor: pointer;
-  border-bottom: 2px solid;
-  transition: border 1s;
-}
-
 .vaciarCarrito {
   padding-left: 30px;
 }
 
 .ordenar-az {
   border: 0;
+  margin-left: 1.5rem;
   border-radius: 10px;
   background-color: #f42b03ff;
   font-size: 1.2rem;
@@ -332,6 +341,7 @@
   border: 0;
   border-radius: 10px;
   background-color: #f42b03ff;
+  margin-left: 1.5rem;
   font-size: 1.2rem;
   padding: .25rem;
   cursor: pointer;
@@ -356,4 +366,62 @@
 
 .completarCompraBoton:hover {
   background-color: #ec7505ff;
+}
+
+.containerCarrito {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1.5rem;
+}
+
+.productoCarritoImagen {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.productoCarritoDetalles {
+  background-color: #f42b03ff;
+  border-radius: 10px;
+  margin-top: -1rem;
+  padding: .5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.productoCarritoTitulo {
+  font-size: 1.5rem;
+}
+
+.productoCarritoPrecio {
+  font-size: 1rem;
+}
+
+.productoBorrar {
+  border: 0;
+  border-radius: 10px;
+  background-color: #ec7505ff;
+  font-size: 1.2rem;
+  padding: .25rem;
+  cursor: pointer;
+  border-bottom: 2px solid;
+  transition: border 1s;
+}
+
+.totalCarrito {
+  color: #e70e02ff;
+  font-size: 30px;
+  font-style: initial;
+  margin-left: 50px;
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.comprarCarrito {
+  padding-left: 50px;
+  padding-top: 20px;
 }
