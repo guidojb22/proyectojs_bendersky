@@ -7,7 +7,7 @@ const nodosProductosOferta = (data, container) => {
     const nodos = data.reduce((acc, producto) => {
         return acc + `
         <article class="producto">
-            <img class="productoImagen" src=${producto.imagen} alt="${producto.titulo}">
+            <img class="productoImagen" src=${producto.imagenOferta} alt="${producto.titulo}">
             <div class="productoDetalles">
                 <h3 class="productoTitulo">${producto.titulo}</h3>
                 <p class="productoPrecio">Precio: $${producto.precio}</p>
