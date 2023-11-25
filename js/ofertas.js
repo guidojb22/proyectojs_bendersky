@@ -48,4 +48,4 @@ const llamadoArrayOferta = (direccion, generarNodos, container) => {
             }
         })
 };
-llamadoArrayOferta("../js/productos.json", nodosProductosOferta, containerTarjetasOferta);
+llamadoArrayOferta("./js/productos.json", nodosProductosOferta, containerTarjetasOferta);
